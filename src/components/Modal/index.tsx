@@ -36,7 +36,7 @@ const CreateEmailModal = () => {
         alert("Email berhasil dikirim");
         setIsOpen(false);
       })
-      .catch((err) => alert(err.message))
+      .catch((err) => alert(err.response.data.message))
       .finally(() => reset());
   };
 
@@ -98,7 +98,7 @@ const CreateEmailModal = () => {
                         className="rounded-xl border border-gray-300 px-3 py-1.5 focus:outline-none focus:ring-1 focus:ring-primary"
                         {...register("recipient")}
                       />
-                      <p className="text-red-500">
+                      <p className="mb-2 text-sm text-red-500">
                         {errors.recipient?.message}
                       </p>
                     </div>
@@ -110,7 +110,9 @@ const CreateEmailModal = () => {
                         className="rounded-xl border border-gray-300 px-3 py-1.5 focus:outline-none focus:ring-1 focus:ring-primary"
                         {...register("subject")}
                       />
-                      <p className="text-red-500">{errors.subject?.message}</p>
+                      <p className="mb-2 text-sm text-red-500">
+                        {errors.subject?.message}
+                      </p>
                     </div>
                     <div className="flex flex-col gap-y-2">
                       <label htmlFor="description">Deskripsi</label>
@@ -119,11 +121,11 @@ const CreateEmailModal = () => {
                         className="rounded-xl border border-gray-300 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-primary"
                         {...register("description")}
                       />
-                      <span className="text-xs text-red-500">
+                      <span className="mb-2 text-sm text-red-500">
                         {errors.description?.message}
                       </span>
                     </div>
-                    <div className="mt-4 flex flex-col w-full">
+                    <div className="mt-4 flex w-full flex-col">
                       <button
                         type="submit"
                         className="self-end rounded-full border border-transparent bg-blue-100 px-7 py-2 font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
