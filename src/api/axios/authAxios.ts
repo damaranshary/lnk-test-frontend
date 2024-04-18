@@ -5,6 +5,7 @@ import {
   RegisterResponse,
   RegisterRequest,
   LogoutResponse,
+  UserResponse,
 } from "../../types/userTypes";
 
 export const login = async ({
@@ -65,3 +66,16 @@ export const logout = async (): Promise<LogoutResponse> => {
 
   return response.data;
 };
+
+
+export const getProfile = async (url: string): Promise<UserResponse> => {
+    const accessToken = localStorage.getItem("accessToken");
+  
+    const response = await axios.get(url, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+  
+    return response.data;
+  };

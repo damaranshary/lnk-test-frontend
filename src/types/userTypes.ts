@@ -42,3 +42,9 @@ export interface LogoutResponse {
   status: string;
   message: string;
 }
+
+export interface UserResponse {
+  status: string;
+  data: User;
+  message: string;
+}
