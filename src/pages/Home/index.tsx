@@ -3,6 +3,7 @@ import { logout as logoutUser } from "../../api/axios/authAxios";
 import { useState } from "react";
 import { useGetEmails, useGetProfile } from "../../api/swr/swr";
 import { InboxIcon, PaperAirplaneIcon } from "@heroicons/react/24/outline";
+import CreateEmailModal from "../../components/Modal";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -41,9 +42,7 @@ const Home = () => {
           {loadingUser ? `Loading...` : `${userData?.data.name}`}
         </h4>
 
-        <button className="mt-5 self-end me-5 rounded-full border-transparent bg-green-500 p-3 px-10 text-white focus:outline-none">
-          Create +
-        </button>
+        <CreateEmailModal />
 
         <div className="flex px-2 py-5 sm:px-0">
           <div className="h-inherit flex flex-col justify-between gap-3">
@@ -62,13 +61,18 @@ const Home = () => {
                 </div>
               ))}
             </div>
-            <button className="bg-red-500 rounded-full py-1.5 text-white" onClick={handleLogout}>Logout</button>
+            <button
+              className="rounded-full bg-red-500 py-1.5 text-white"
+              onClick={handleLogout}
+            >
+              Logout
+            </button>
           </div>
           {loadingEmail && <p>Loading...</p>}
           {emails?.data?.length === 0 ? (
             <p className="mx-auto my-auto self-center">Email kosong</p>
           ) : (
-            <ul className="flex flex-col gap-3 mx-5 w-full scroll-auto">
+            <ul className="mx-5 flex h-[600px] w-full flex-col gap-3 overflow-y-auto">
               {emails?.data.map((email) => (
                 <li
                   key={email._id}

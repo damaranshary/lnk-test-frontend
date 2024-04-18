@@ -1,27 +1,31 @@
 export interface Email {
-    _id: string;
-    sender: string;
-    recipient: string;
-    subject: string;
-    description: string;
-    timestamp: string;
+  _id: string;
+  sender: string;
+  recipient: string;
+  subject: string;
+  description: string;
+  timestamp: string;
 }
 
 export interface EmailSchema {
-    recipient: string;
-    subject: string;
-    description: string;
+  recipient: string;
+  subject: string;
+  description: string;
 }
 
 export interface SendEmailRequest {
-    recipient: string;
-    subject: string;
-    description: string;
+  recipient: string;
+  subject: string;
+  description: string;
+}
+
+export interface SendEmailResponse {
+  status: string;
+  message: string;
 }
 
 export interface GetEmailsResponse {
-    status: string;
-    data: Email[];
-    message: string;
+  status: string;
+  data: Email[];
+  message: string;
 }
-

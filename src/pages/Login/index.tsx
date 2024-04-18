@@ -39,7 +39,7 @@ const Login = () => {
       <div className="flex w-full flex-col gap-y-2 self-center sm:mx-auto sm:w-[600px] sm:gap-y-5 md:ms-10 lg:ms-20 lg:w-5/12 xl:ms-40 xl:w-4/12">
         <Link to="/">
           <h1 className="mt-3 text-center text-3xl font-bold text-primary md:text-start">
-            EDI Indonesia
+            LNK-TEST
           </h1>
         </Link>
         <form
@@ -83,7 +83,7 @@ const Login = () => {
           <div className="flex w-full">
             <button
               type="submit"
-              className="mx-auto mt-4 w-60 self-center disabled:bg-gray-100 disabled:hover:cursor-not-allowed rounded-full bg-primary p-2 px-5 font-semibold text-white hover:bg-accent md:hover:cursor-pointer"
+              className="mx-auto mt-4 w-60 self-center rounded-full bg-primary p-2 px-5 font-semibold text-white hover:bg-accent disabled:bg-gray-100 disabled:hover:cursor-not-allowed md:hover:cursor-pointer"
             >
               Masuk
             </button>

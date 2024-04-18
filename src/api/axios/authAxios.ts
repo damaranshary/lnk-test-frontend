@@ -12,7 +12,6 @@ export const login = async ({
   email,
   password,
 }: LoginRequest): Promise<LoginResponse> => {
-  console.log(import.meta.env.BACKEND_API_URL);
   const response = await axios.post(
     `${import.meta.env.VITE_API_URL}/auth/login`,
     {

@@ -67,7 +67,7 @@ const Register = () => {
       <div className="flex w-full flex-col gap-y-2 self-center sm:mx-auto sm:w-[600px] sm:gap-y-5 md:ms-10 md:w-7/12 lg:ms-20 lg:w-6/12 xl:ms-32 xl:w-5/12 2xl:ms-40 2xl:w-4/12">
         <Link to="/">
           <h1 className="mt-3 text-center text-3xl font-bold text-primary md:text-start">
-            EDI Indonesia
+            LNK-TEST
           </h1>
         </Link>
         <form
